@@ -7,8 +7,9 @@ if (process.argv.length != 3) {
 
 const apiKey = process.argv[2];
 
-const twitter = require('./twitter')
-const tweets = twitter(apiKey)
+const twitter = require('./twitter')(apiKey);
+const words = require('./words')();
+
 
 const express = require('express')
 const app = express()
@@ -16,8 +17,10 @@ const port = 8080
 
 app.get('/search', async (req, res, next) => {
     try {
-        const statuses = await tweets.search("#HIF");
-        res.json(statuses.map(status => status.text));
+        const q = req.query.q;
+        const texts = await twitter.texts(q)
+            .then(texts => words.histogram(texts));
+        res.json(texts);
     }
     catch (e) {
         next(e);
