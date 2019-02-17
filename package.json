@@ -5,6 +5,7 @@
   "main": "index.js",
   "repository": "https://github.com/ystromm/supreme-winner",
   "scripts": {
+    "start": "node src/index.js",
     "test": "istanbul cover node_modules/mocha/bin/_mocha"
   },
   "author": "",

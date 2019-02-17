@@ -2,5 +2,5 @@
 
 
     npm install
-    npm run test
-    node src/index.js
+    npm test
+    node start <key>

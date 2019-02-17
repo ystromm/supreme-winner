@@ -8,15 +8,15 @@ if (process.argv.length != 3) {
     process.exit(-1);
 }
 
-const key = process.argv[0];
+const key = process.argv[2];
 
-app.get('/tweets', async (req, res, next) => {
+app.get('/search', async (req, res, next) => {
     try {
-        res.json({});
+        res.json({key: key});
     }
     catch (e) {
         next(e);
     }
 })
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`Listening on port ${port}!`))
