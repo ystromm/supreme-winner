@@ -1,0 +1,23 @@
+{
+  "name": "supreme-winner",
+  "version": "1.0.0",
+  "description": "Node-js exercise.",
+  "main": "index.js",
+  "repository": "https://github.com/ystromm/supreme-winner",
+  "scripts": {
+    "test": "istanbul cover node_modules/mocha/bin/_mocha"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "express": "^4.16.4",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "approvals": "^3.0.2",
+    "chai": "^4.2.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.2.0"
+  }
+}
