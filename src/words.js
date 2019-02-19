@@ -1,7 +1,7 @@
 const words = function () {
     return {
         histogram: function (texts) {
-            return texts
+            const reduce = texts
                 .flatMap(text => text.split(' '))
                 .reduce((words, word) => {
                     if (words.hasOwnProperty(word)) {
@@ -12,6 +12,9 @@ const words = function () {
                     }
                     return words;
                 }, {});
+            return Object.values(reduce)
+                .sort((a, b) => b.count - a.count)
+                .slice(0, 100);
         }
     };
 };
